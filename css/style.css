@@ -14,6 +14,8 @@
 
   --main-text-family: roboto;
   --main-text-weight: 400;
+
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -123,6 +125,13 @@ img {
 
   display: flex;
 }
+
+.header-link,
+.nav-list-link,
+.address-list-link {
+  transition: color 250ms var(--cubic);
+}
+
 .header-link:hover,
 .header-link:focus,
 .nav-list-link:hover,
@@ -242,6 +251,8 @@ contact-list-item {
   margin-right: 10px;
 
   fill: var(--main-text-color);
+
+  transition: fill 250ms var(--cubic);
 }
 
 .header-link {
@@ -456,6 +467,8 @@ contact-list-item {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .social-network-icon {
@@ -463,6 +476,8 @@ contact-list-item {
   height: 20px;
 
   fill: var(--svg-icon-color);
+
+  transition: fill 250ms var(--cubic);
 }
 
 .social-network-link:hover,
@@ -472,7 +487,6 @@ contact-list-item {
 
 .social-network-link:hover .social-network-icon,
 .social-network-link:focus .social-network-icon {
-  background-color: var(--link-text-color);
   fill: var(--border-portfolio-color);
 }
 
@@ -503,6 +517,8 @@ contact-list-item {
 
   border: 1px solid var(--svg-icon-color);
   border-radius: 4px;
+
+  transition: border-color 250ms var(--cubic);
 }
 
 .client-label {
@@ -510,6 +526,8 @@ contact-list-item {
   height: 60px;
 
   fill: var(--svg-icon-color);
+
+  transition: fill 250ms var(--cubic);
 }
 
 .client-link:hover,
@@ -554,10 +572,15 @@ contact-list-item {
   letter-spacing: 0.03em;
 
   cursor: pointer;
+
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic),
+    box-shadow 250ms var(--cubic);
 }
 
 .portfolio-section-list-link {
   display: block;
+
+  transition: box-shadow 250ms var(--cubic);
 }
 
 .portfolio-section-list-link:hover,
@@ -617,4 +640,12 @@ contact-list-item {
 }
 .portfolio-section-list-iteam:nth-last-child(-n + 3) {
   margin-bottom: 0;
+}
+
+.portfolio-section-list-link {
+  text-decoration: none;
+}
+
+.portfolio-section-list-link p {
+  color: var(--main-text-color);
 }
