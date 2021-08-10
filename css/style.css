@@ -281,6 +281,18 @@ contact-list-item {
   height: 4px;
   background-color: var(--link-text-color);
   border-radius: 2px;
+
+  animation: line 250ms linear forwards;
+}
+
+@keyframes line {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .hero {
@@ -710,12 +722,6 @@ contact-list-item {
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
 
-  /* color: var(--white-color);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.58;
-  letter-spacing: 0.03em; */
-
   transform: translateY(100%);
 }
 
@@ -730,4 +736,72 @@ contact-list-item {
   font-size: 18px;
   line-height: 1.58;
   letter-spacing: 0.03em;
+}
+
+.backdrop {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transition: opacity 250ms var(--cubic);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 528px;
+  height: 581px;
+
+  background-color: var(--white-color);
+  border-radius: 4px;
+  opacity: 1;
+  transition: transform 250ms var(--cubic), opacity 200ms var(--cubic);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--white-color);
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+.modal-close-icon {
+  width: 11px;
+  height: 11px;
+
+  fill: #000000;
+
+  transition: fill 250ms var(--cubic);
+}
+
+.modal-close:hover .modal-close-icon {
+  fill: var(--link-text-color);
 }
