@@ -117,6 +117,9 @@ img {
   letter-spacing: 0.02em;
 }
 .header-link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--main-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -143,6 +146,10 @@ img {
 }
 
 .footer {
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
   background-color: var(--background-footer-color);
   padding-top: 60px;
   padding-bottom: 60px;
@@ -215,6 +222,10 @@ img {
 /* Main page styles */
 /* Hedear styles */
 .header {
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
   border-bottom: 1px solid #ececec;
 }
 
@@ -308,7 +319,7 @@ contact-list-item {
 
   text-align: center;
 
-  min-width: 1600px;
+  width: 1600px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -441,18 +452,19 @@ contact-list-item {
 .our-work-direction {
   position: relative;
 }
+
 .our-work-title {
   position: absolute;
   bottom: 0;
 
-  display: block;
   width: 100%;
   height: 70px;
-
   background-color: rgb(47, 48, 58, 0.8);
 
-  padding-top: 27px;
-  padding-bottom: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   color: var(--white-color);
   font-weight: 700;
   font-size: 14px;
@@ -462,8 +474,12 @@ contact-list-item {
   text-transform: uppercase;
 }
 
+.prof-cards-content {
+  padding: 30px 10px 16px 10px;
+}
+
 .our-team h3 {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 10px;
 
   font-weight: 500;
@@ -473,7 +489,7 @@ contact-list-item {
   letter-spacing: 0.03em;
 }
 .our-team p {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 
   font-size: 16px;
   line-height: 1.19;
@@ -482,6 +498,10 @@ contact-list-item {
 }
 
 .our-team {
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
   background-color: var(--background-color-primery);
   padding-top: 94px;
   padding-bottom: 94px;
@@ -554,17 +574,12 @@ contact-list-item {
 
 .our-clients-list {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .client-link {
   width: 170px;
   height: 92px;
-
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 32px;
-  padding-right: 32px;
 
   display: flex;
   justify-content: center;
@@ -576,10 +591,11 @@ contact-list-item {
   transition: border-color 250ms var(--cubic);
 }
 
-.client-label {
-  width: 106px;
-  height: 60px;
+.our-clients-list-item:not(:last-child) {
+  margin-right: 30px;
+}
 
+.client-label {
   fill: var(--svg-icon-color);
 
   transition: fill 250ms var(--cubic);
