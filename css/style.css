@@ -292,17 +292,18 @@ contact-list-item {
   height: 4px;
   background-color: var(--link-text-color);
   border-radius: 2px;
+  /* transform: translateY(3px); */
 
   animation: line 250ms linear forwards;
 }
 
 @keyframes line {
   0% {
-    transform: scale(0);
+    transform: translateY(1px) scale(0);
   }
 
   100% {
-    transform: scale(1);
+    transform: translateY(1px) scale(1);
   }
 }
 
@@ -319,7 +320,7 @@ contact-list-item {
 
   text-align: center;
 
-  width: 1600px;
+  width: 1585px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -544,13 +545,15 @@ contact-list-item {
   align-items: center;
 
   transition: background-color 250ms var(--cubic);
+
+  color: var(--svg-icon-color);
 }
 
 .social-network-icon {
   width: 20px;
   height: 20px;
 
-  fill: var(--svg-icon-color);
+  fill: currentColor;
 
   transition: fill 250ms var(--cubic);
 }
@@ -558,11 +561,7 @@ contact-list-item {
 .social-network-link:hover,
 .social-network-link:focus {
   background-color: var(--link-text-color);
-}
-
-.social-network-link:hover .social-network-icon,
-.social-network-link:focus .social-network-icon {
-  fill: var(--border-portfolio-color);
+  color: var(--border-portfolio-color);
 }
 
 /* Our clients */
@@ -587,6 +586,7 @@ contact-list-item {
 
   border: 1px solid var(--svg-icon-color);
   border-radius: 4px;
+  color: var(--svg-icon-color);
 
   transition: border-color 250ms var(--cubic);
 }
@@ -596,7 +596,7 @@ contact-list-item {
 }
 
 .client-label {
-  fill: var(--svg-icon-color);
+  fill: currentColor;
 
   transition: fill 250ms var(--cubic);
 }
@@ -605,12 +605,7 @@ contact-list-item {
 .client-link:focus {
   border-color: var(--link-text-color);
   cursor: pointer;
-}
-
-.client-link:hover .client-label,
-.client-link:focus .client-label {
-  fill: var(--link-text-color);
-  cursor: pointer;
+  color: var(--link-text-color);
 }
 
 /* Portfolio */
@@ -738,10 +733,11 @@ contact-list-item {
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
 
-  transform: translateY(100%);
+  transform: translateY(101%);
 }
 
-.portfolio-section-list-link:hover .overlay {
+.portfolio-section-list-link:hover .overlay,
+.portfolio-section-list-link:focus .overlay {
   transform: translateY(0);
   transition: transform 250ms var(--cubic);
 }
